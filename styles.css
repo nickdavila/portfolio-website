@@ -1,23 +1,106 @@
 @charset "UTF-8";
 /* CSS Document */
 
-*{
+* {
 	margin: 0;
 	padding: 0;
 	font-family: 'Poppins', sans-serif;
 	box-sizing: border-box;
 }
 
-body{
-	background: #F5F5F5;
+body {
+	background: white;
 	color: black;
 }
 
 /* background image */
-#header{
+#header {
 	width: 100%;
 	height: 100vh;
-	background-image: url("images/background.png");
+	/*background-image: url("images/temp-background.png");*/
+/*	background-image: url("images/PC pic.png");*/
 	background-size: center;
 	background-position: center;
+}
+
+.container {
+	/* 10px padding top and bottom and 10% left and right 
+	This padding makes the nav things not be on the corner, might need to adjust for my 1920x1080 display we will see.*/
+	padding: 10px 10%;
+}
+
+/* nav bar code */
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+/* logo code */
+.logo {
+	width: 100px;
+	
+}
+
+/* nav bar code to make horizontal */
+nav ul li {
+	display: inline-block; /*horizontally aligned */
+	list-style: none;
+	margin: 10px 20px;	
+}
+
+/* nav bar code to make links specifically black and no underline */
+nav ul li a {
+	color: black;
+	text-decoration: none; /* remove underline */
+	font-size: 18px;
+	position: relative;
+}
+
+/*code to make text from whatever page you're on be bold*/
+nav a.selected, a.selected:link, a.selected:active {
+	font-weight: bold;
+}
+
+/* adding underline for hover effect */
+nav ul li a::after {
+	content: '';
+	width: 100%; /* 0% so underline is hidden */
+	opacity: 0;
+	height: 3px;
+	background: #BC4033;
+	position: absolute;
+	left: 0;
+	bottom: -6px;
+	transition: 0.25s;
+}
+
+/* hover effect */
+nav ul li a:hover::after {
+	opacity: 1;
+}
+
+/*******************************************************************************************************************************
+******************************************************************************SEPARATOR*************************************/
+
+.slice{
+    width:238px;
+    height:544px;
+    overflow:hidden;
+    position: relative;
+}
+
+.slice img {
+    position: center;
+}
+
+.right-half {
+    position: absolute;
+    right: 0;
+}
+
+.bottom {
+  float:right;
+  
 }
