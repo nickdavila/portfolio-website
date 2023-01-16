@@ -13,6 +13,7 @@ body {
 	color: black;
 }
 
+
 /* background image */
 #header {
 	width: 100%;
@@ -83,6 +84,26 @@ nav ul li a:hover::after {
 
 /*******************************************************************************************************************************
 ******************************************************************************SEPARATOR*************************************/
+
+#PC-pic{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+/*	border: 3px dashed red;*/
+/*	This code makes it where only the left half is visible, had to do 62% cause 50% would do less than half*/
+	clip-path: inset(0 62% 0 0);
+}
+
+#drawn-pc{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+/*	border: 3px dashed red;*/
+/*	This code makes it where only the left half is visible, had to do 62% cause 50% would do less than half*/
+	clip-path: inset(0 0 0 38%);
+}
 
 .slice{
     width:238px;
