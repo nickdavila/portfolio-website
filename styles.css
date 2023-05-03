@@ -2,10 +2,9 @@
 /* CSS Document */
 
 * {
-	margin: 0;
-	padding: 0;
-	font-family: 'Poppins', sans-serif;
-	box-sizing: border-box;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
 
 body {
@@ -30,35 +29,47 @@ body {
 */
 }
 
+/* nav bar code */
+#navigation {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 0;
+}
+
 .container {
 	/* 10px padding top and bottom and 10% left and right 
 	This padding makes the nav things not be on the corner, might need to adjust for my 1920x1080 display we will see.*/
 	padding: 10px 10%;
+	width: 100%;
+	height: 100vh;
+	display: flex;
 }
 
-/* nav bar code */
-nav {
-	display: flex;
+.container .left-half, .container .right-half{
+	flex: 1; /* will give equal width to both the elements */
 	align-items: center;
-	justify-content: space-between;
-	flex-wrap: wrap;
+	justify-content: center;
 }
 
 /* logo code */
-.logo {
-	width: 100px;
-	
+#logo {
+    display: flex;
+    width: 100px;
 }
 
 /* nav bar code to make horizontal */
-nav ul li {
+#navigation ul li {
 	display: inline-block; /*horizontally aligned */
 	list-style: none;
 	margin: 10px 20px;	
 }
 
 /* nav bar code to make links specifically black and no underline */
-nav ul li a {
+#navigation ul li a {
 	
 	font-family: 'franklin-gothic-urw', sans-serif;
 	color: black;
@@ -68,13 +79,13 @@ nav ul li a {
 }
 
 /*code to make text from whatever page you're on be bold*/
-nav a.selected, a.selected:link, a.selected:active {
+#navigation a.selected, a.selected:link, a.selected:active {
 	
 	font-weight: bold;
 }
 
 /* adding underline for hover effect */
-nav ul li a::after {
+#navigation ul li a::after {
 	
 	content: '';
 	width: 100%; /* 0% so underline is hidden */
@@ -88,12 +99,12 @@ nav ul li a::after {
 }
 
 /* hover effect */
-nav ul li a:hover::after {
+#navigation ul li a:hover::after {
 	opacity: 1;
 }
 
 /*code for header text*/
-.left-header-text h1{
+#left-header-text h1{
     font-family: 'franklin-gothic-urw', sans-serif;
     font-weight: 900;
     font-size: 47px;
