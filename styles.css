@@ -12,23 +12,6 @@ body {
 	color: black;
 }
 
-
-/* background image */
-#header {
-	width: 100%;
-	height: 100vh;
-	background-image: url("images/half-pcs.png");
-	background-size: 600px;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	/*background-image: url("images/temp-background.png");*/
-/*	background-image: url("images/PC pic.png");*/
-/*
-	background-size: center;
-	background-position: center;
-*/
-}
-
 /* nav bar code */
 #navigation {
     display: flex;
@@ -40,7 +23,7 @@ body {
     top: 0;
 }
 
-.container {
+.main-container {
 	/* 10px padding top and bottom and 10% left and right 
 	This padding makes the nav things not be on the corner, might need to adjust for my 1920x1080 display we will see.*/
 	padding: 10px 10%;
@@ -49,10 +32,55 @@ body {
 	display: flex;
 }
 
-.container .left-half, .container .right-half{
-	flex: 1; /* will give equal width to both the elements */
-	align-items: center;
-	justify-content: center;
+.main-container .left-half,
+.main-container .right-half {
+	/* main main-container info for both left and right */
+    flex: 1; /* will give equal width to both the elements, will use later for animation */
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	background: url("images/1.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+.main-container .left-half:hover {
+	
+}
+/* bg  */
+.main-container .right-half {
+	background: url("images/2.jpg")
+}
+
+/* text color */
+.main-container .right-half {
+	color: aliceblue 
+}
+
+/* all h2 text in main-container, have these properties:  */
+.main-container h2 {
+	font-size: 60px;
+	font-weight: 900;
+}
+
+/* properties for the main button in the container */
+.main-container .btn {
+	background: #FFFFFF;
+    padding: 10px 20px;
+	text-decoration: none;
+	display: inline-block;
+	margin-top: 24px;
+	color: gray;
+	box-shadow: 0 4px 16px -4px black;
+	opacity: 0;
+	transition: all 500ms; /* allows you to change property values smoothly, over a given duration */
+}
+
+/* what to do to button when hovering over left-half */
+.main-container .left-half:hover .btn,
+.main-container .right-half:hover .btn {
+	/* when we hover over the left OR right side, do the following: */
+	opacity: 1;
 }
 
 /* logo code */
@@ -104,17 +132,21 @@ body {
 }
 
 /*code for header text*/
-#left-header-text h1{
+/*
+.left-header-text h1{
     font-family: 'franklin-gothic-urw', sans-serif;
     font-weight: 900;
     font-size: 47px;
 }
+*/
 
+/*
 #galaxy-collision{
     display: inline;
     margin-bottom: -9px;
     margin-left: 15px;
 }
+*/
 
 /*******************************************************************************************************************************
 ******************************************************************************SEPARATOR*************************************/
@@ -165,14 +197,4 @@ body {
 
 .slice img {
     position: center;
-}
-
-.right-half {
-    position: absolute;
-    right: 0;
-}
-
-.bottom {
-  float:right;
-  
 }
