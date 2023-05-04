@@ -42,11 +42,14 @@ body {
 	background: url("images/1.jpg");
 	background-size: cover;
 	background-position: center;
+	transition: all 500ms;
 }
 
-.main-container .left-half:hover {
-	
+.main-container .left-half:hover,
+.main-container .right-half:hover {
+	flex: 2;
 }
+
 /* bg  */
 .main-container .right-half {
 	background: url("images/2.jpg")
