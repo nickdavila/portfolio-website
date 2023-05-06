@@ -66,14 +66,25 @@ body {
 	font-weight: 900;
 }
 
+/* transition back into place */
+#half-drawn-pc {
+  transition: 555ms;
+}
+
 .main-container .right-half #half-drawn-pc {
     width: 36%;
     height: auto;
     position: relative;
     top: 70%;
-    left: -72%;
+    left: -72.5%;
     transform: translate(-50%, 50%);
 /*    transition: all 500ms;*/
+}
+
+/* transition to left side*/
+.main-container .right-half:hover #half-drawn-pc {
+	left: -119.5%;
+	transition:  455ms;
 }
 
 /* properties for the main button in the container */
