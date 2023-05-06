@@ -67,25 +67,39 @@ body {
 }
 
 /* transition back into place */
+/*
 #half-drawn-pc {
   transition: 555ms;
 }
+*/
 
-.main-container .right-half #half-drawn-pc {
+#half-drawn-pc {
     width: 36%;
     height: auto;
     position: relative;
+	opacity: 1;
     top: 70%;
     left: -72.5%;
     transform: translate(-50%, 50%);
+	transition: 555ms;
 /*    transition: all 500ms;*/
 }
 
-/* transition to left side*/
+/* drawn-pc transition to right side*/
+.main-container .left-half:hover #half-drawn-pc {
+	opacity: 0;
+	top: 0%;
+/*	transition:  455ms;*/
+}
+
+
+/* drawn-pc transition to left side*/
 .main-container .right-half:hover #half-drawn-pc {
 	left: -119.5%;
 	transition:  455ms;
 }
+
+
 
 /* properties for the main button in the container */
 .main-container .btn {
@@ -154,60 +168,3 @@ body {
 #navigation ul li a:hover::after {
 	opacity: 1;
 }
-
-/*code for header text*/
-/*
-.left-header-text h1{
-    font-family: 'franklin-gothic-urw', sans-serif;
-    font-weight: 900;
-    font-size: 47px;
-}
-*/
-
-/*
-#galaxy-collision{
-    display: inline;
-    margin-bottom: -9px;
-    margin-left: 15px;
-}
-*/
-
-/*******************************************************************************************************************************
-******************************************************************************SEPARATOR*************************************/
-
-/*
-.half-pcs{
-	display: inline-block;
-	margin-left: 30%;
-	margin-right: auto;
-	margin-bottom: 80%;
-}
-*/
-
-/*
-#PC-pic{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
-*/
-/*	border: 3px dashed red;*/
-/*	This code makes it where only the left half is visible, had to do 62% cause 50% would do less than half*/
-/*
-	clip-path: inset(0 62% 0 0);
-}
-*/
-
-/*
-#drawn-pc{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
-*/
-/*	border: 3px dashed red;*/
-/*	This code makes it where only the left half is visible, had to do 62% cause 50% would do less than half*/
-/*
-	clip-path: inset(0 0 0 38%);
-}
-*/
