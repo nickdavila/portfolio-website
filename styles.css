@@ -66,35 +66,52 @@ body {
 	font-weight: 900;
 }
 
-/* transition back into place */
-/*
-#half-drawn-pc {
-  transition: 555ms;
-}
-*/
-
 #half-drawn-pc {
     width: 36%;
     height: auto;
     position: relative;
-    left: -72.5%;
-    transform: translate(-50%, 50%);
 	transition: 555ms;
-/*    transition: all 500ms;*/
 }
 
-/* drawn-pc transition to left side (hovering over right) */
-.main-container .right-half:hover #half-drawn-pc {
-  left: -119.5%;
-  transition: 455ms;
+@media screen and (min-width: 1024px) {
+    /* for screens larger than 1024px (e.g. larger desktop screens) */
+    #half-drawn-pc {
+        left: -58.5%;
+    }
+
+	/* drawn-pc transition to left side (hovering over right) */
+	.main-container .right-half:hover #half-drawn-pc {
+		left: -101%;
+		transition: 455ms;
+	}
+  
+	/* drawn-pc transition to right side (hovering over left)*/
+	/* used the ~ symbol (Subsequent-sibling Combinator) which allowed me to modify #half-drawn-pc even though #half-drawn-pc is a child of right-half! */
+	.main-container .left-half:hover ~ .right-half #half-drawn-pc {
+		left: -16.5%;
+		transition: 455ms;
+	}
 }
 
-/* drawn-pc transition to right side (hovering over left)*/
-/* used the ~ symbol (Subsequent-sibling Combinator) which allowed me to modify #half-drawn-pc even though #half-drawn-pc is a child of right-half! */
-.main-container .left-half:hover ~ .right-half #half-drawn-pc {
-  left: -26%;
-  transition: 455ms;
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* for screens between 768px and 1024px (e.g. smaller desktop screens) */
+    #half-drawn-pc {
+		filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
+        left: -65%;
+    }
 }
+
+
+@media screen and (max-width: 768px) {
+    /* for screens smaller than 768px (e.g. tablets and mobile devices) */
+    #half-drawn-pc {
+		opacity: 0;
+        left: -100%;
+    }
+}
+
+
+
 
 
 
