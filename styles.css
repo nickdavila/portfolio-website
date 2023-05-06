@@ -77,27 +77,26 @@ body {
     width: 36%;
     height: auto;
     position: relative;
-	opacity: 1;
-    top: 70%;
     left: -72.5%;
     transform: translate(-50%, 50%);
 	transition: 555ms;
 /*    transition: all 500ms;*/
 }
 
-/* drawn-pc transition to right side*/
-.main-container .left-half:hover #half-drawn-pc {
-	opacity: 0;
-	top: 0%;
-/*	transition:  455ms;*/
-}
-
-
-/* drawn-pc transition to left side*/
+/* drawn-pc transition to left side (hovering over right) */
 .main-container .right-half:hover #half-drawn-pc {
-	left: -119.5%;
-	transition:  455ms;
+  left: -119.5%;
+  transition: 455ms;
 }
+
+/* drawn-pc transition to right side (hovering over left)*/
+/* used the ~ symbol (Subsequent-sibling Combinator) which allowed me to modify #half-drawn-pc even though #half-drawn-pc is a child of right-half! */
+.main-container .left-half:hover ~ .right-half #half-drawn-pc {
+  left: -26%;
+  transition: 455ms;
+}
+
+
 
 
 
