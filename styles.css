@@ -42,6 +42,7 @@ body {
 	background: url("images/1.jpg");
 	background-size: cover;
 	background-position: center;
+	position: relative;
 	transition: all 500ms;
 }
 
@@ -66,29 +67,29 @@ body {
 	font-weight: 900;
 }
 
-#half-drawn-pc {
-    width: 36%;
+.main-container .right-half #half-drawn-pc {
+    width: 7%;
     height: auto;
-    position: relative;
+    position: absolute;
 	transition: 555ms;
 }
 
 @media screen and (min-width: 1024px) {
     /* for screens larger than 1024px (e.g. larger desktop screens) */
     #half-drawn-pc {
-        left: -58.5%;
+		transform: translate(-166%, -50%);
     }
 
 	/* drawn-pc transition to left side (hovering over right) */
 	.main-container .right-half:hover #half-drawn-pc {
-		left: -101%;
+		transform: translate(-150%, -50%);
 		transition: 455ms;
 	}
   
 	/* drawn-pc transition to right side (hovering over left)*/
 	/* used the ~ symbol (Subsequent-sibling Combinator) which allowed me to modify #half-drawn-pc even though #half-drawn-pc is a child of right-half! */
 	.main-container .left-half:hover ~ .right-half #half-drawn-pc {
-		left: -16.5%;
+		transform: translate(-50%, -50%);
 		transition: 455ms;
 	}
 }
