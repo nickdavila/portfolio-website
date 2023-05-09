@@ -46,10 +46,31 @@ body {
 	transition: all 500ms;
 }
 
+/* black line for split-screen layout */
+.main-container::before {
+	content: "";
+	position: absolute;
+	width: 1px;
+	height: 100%;
+	background-color: black;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+	transition: all 500ms;
+  }
+  
+  /* expand black line on hover */
+  .main-container .left-half:hover::before,
+  .main-container .right-half:hover::before {
+	height: calc(100% + 20px); /* adjust height to match the padding-top and padding-bottom of .main-container */
+  }
+
 .main-container .left-half:hover,
 .main-container .right-half:hover {
 	flex: 2;
 }
+
+
 
 /* bg  */
 .main-container .right-half {
@@ -61,6 +82,7 @@ body {
 	color: aliceblue 
 }
 
+/* RIGHT HALF CSS */
 
 /* general properties of right-HALF-drawn-pc */
 .main-container .right-half #right-half-drawn-pc {
@@ -86,8 +108,8 @@ body {
 	/* transition: 600ms; */
 	opacity: 1;
 	order: -1; /* Move #right-full-pc to the left of #right-half-drawn-pc */
-	transition: opacity ease-out;
-  }
+}
+
 
 /* properties for the main button in the container */
 .main-container .btn {
