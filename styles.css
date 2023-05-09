@@ -61,25 +61,32 @@ body {
 	color: aliceblue 
 }
 
+
+/* general properties of right-HALF-drawn-pc */
 .main-container .right-half #right-half-drawn-pc {
-	flex-grow: inherit; /* puts the pc and (everything else) on the middle edge */
-	transition: 200ms;
+	flex: auto; /* puts the pc and (everything else) on the middle edge */
+	/* transition: 200ms; */
 }
 
+/* HOVER properties of right-HALF-drawn-pc */
 .main-container .right-half:hover #right-half-drawn-pc {
 	opacity: 0;
-	transition: 200ms;
+	/* no transition because it shows the right half in the middle first then dissapears. looks choppy */
 }
 
+/* general properties of right-FULL-drawn-pc */
 .main-container .right-half #right-full-drawn-pc {
-	opacity: 0; /* puts the pc and (everything else) on the middle edge */
+	opacity: 0;
+	flex: auto;
 	order: 1;
-	transition: 200ms;
 }
 
+/* HOVER properties of right-FULL-drawn-pc */
 .main-container .right-half:hover #right-full-drawn-pc {
+	/* transition: 600ms; */
 	opacity: 1;
 	order: -1; /* Move #right-full-pc to the left of #right-half-drawn-pc */
+	transition: opacity ease-out;
   }
 
 /* properties for the main button in the container */
