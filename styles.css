@@ -61,24 +61,22 @@ body {
 	color: aliceblue 
 }
 
-.main-container .right-half #right-half-pc {
+.main-container .right-half #right-half-drawn-pc {
 	flex-grow: inherit; /* puts the pc and (everything else) on the middle edge */
-	width: 0%;
-	/* font-size: 20px;
-	font-weight: 900; */
+	transition: 200ms;
 }
 
-.main-container .right-half #right-full-pc {
-	flex-grow: inherit; /* puts the pc and (everything else) on the middle edge */
-	/* font-size: 20px;
-	font-weight: 900; */
+.main-container .right-half #right-full-drawn-pc {
+	opacity: 1; /* puts the pc and (everything else) on the middle edge */
 }
 
-/* all h2 text in main-container, have these properties:  */
-.main-container .right-half:hover #right-half-pc {
-	opacity: 0;
-	/* font-size: 20px;
-	font-weight: 900; */
+.main-container .right-half:hover #right-full-drawn-pc {
+	width: 100%;
+	opacity: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	transition: 200ms;
 }
 
