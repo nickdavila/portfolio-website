@@ -66,19 +66,21 @@ body {
 	transition: 200ms;
 }
 
+.main-container .right-half:hover #right-half-drawn-pc {
+	opacity: 0;
+	transition: 200ms;
+}
+
 .main-container .right-half #right-full-drawn-pc {
-	opacity: 1; /* puts the pc and (everything else) on the middle edge */
+	opacity: 0; /* puts the pc and (everything else) on the middle edge */
+	order: 1;
+	transition: 200ms;
 }
 
 .main-container .right-half:hover #right-full-drawn-pc {
-	width: 100%;
 	opacity: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	transition: 200ms;
-}
+	order: -1; /* Move #right-full-pc to the left of #right-half-drawn-pc */
+  }
 
 /* properties for the main button in the container */
 .main-container .btn {
