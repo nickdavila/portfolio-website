@@ -60,10 +60,10 @@ body {
 
 /* code to create line in the middle */
 .main-container .left-half {
-	border-right: 1.5px solid black;
+	border-right: 1px solid black;
 }
 .main-container .right-half {
-	border-left: 1.5px solid black;
+	border-left: 1px solid black;
 }
 
 
@@ -102,7 +102,6 @@ body {
 /* general properties of right-FULL-drawn-pc */
 .main-container .left-half #left-full-pc {
 	opacity: 0;
-	flex: auto;
 	order: -1;
 }
 
@@ -110,7 +109,7 @@ body {
 .main-container .left-half:hover #left-full-pc {
 	/* transition: 600ms; */
 	opacity: 1;
-	order: 0; /* Move #right-full-pc to the left of #right-half-drawn-pc */
+	order: 1; /* Move #right-full-pc to the left of #right-half-drawn-pc */
 }
 
 /* LEFT HALF CSS END */
