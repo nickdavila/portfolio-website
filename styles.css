@@ -32,7 +32,6 @@ body {
 	display: flex;
 }
 
-.main-container .left-half,
 .main-container .right-half {
 	/* main main-container info for both left and right */
     flex: 1; /* will give equal width to both the elements, will use later for animation */
@@ -46,21 +45,33 @@ body {
 	transition: all 500ms;
 }
 
-/* code to create line in the middle start */
+.main-container .left-half {
+	/* main main-container info for both left and right */
+    flex: 1; /* will give equal width to both the elements, will use later for animation */
+	display: inline-flex;
+    align-items: center;
+    justify-content: flex-end; /* not sure why, but in order for PC to be on right end, needed to do flex-end */
+	background: url("images/1.jpg");
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	transition: all 500ms;
+}
+
+/* code to create line in the middle */
 .main-container .left-half {
 	border-right: 1.5px solid black;
 }
 .main-container .right-half {
 	border-left: 1.5px solid black;
 }
-/* code to create line in the middle end */
+
 
 /* whenever hover over a half, that half takes up more of the screen */
 .main-container .left-half:hover,
 .main-container .right-half:hover {
 	flex: 2;
 }
-
 
 /* bg  */
 .main-container .right-half {
@@ -76,29 +87,30 @@ body {
 /* LEFT HALF CSS START */
 
 /* general properties of right-HALF-drawn-pc */
-.main-container .left-half #left-half-pc-pic {
+.main-container .left-half #left-half-pc {
 	/* flex: auto; */
+	flex-grow: auto;
 	/* transition: 200ms; */
 }
 
 /* HOVER properties of right-HALF-drawn-pc */
-.main-container .left-half:hover #left-half-pc-pic {
-	/* opacity: 0; */
+.main-container .left-half:hover #left-half-pc {
+	opacity: 0;
 	/* no transition because it shows the right half in the middle first then dissapears. looks choppy */
 }
 
 /* general properties of right-FULL-drawn-pc */
-.main-container .right-half #right-full-drawn-pc {
+.main-container .left-half #left-full-pc {
 	opacity: 0;
 	flex: auto;
-	order: 1;
+	order: -1;
 }
 
 /* HOVER properties of right-FULL-drawn-pc */
-.main-container .right-half:hover #right-full-drawn-pc {
+.main-container .left-half:hover #left-full-pc {
 	/* transition: 600ms; */
 	opacity: 1;
-	order: -1; /* Move #right-full-pc to the left of #right-half-drawn-pc */
+	order: 0; /* Move #right-full-pc to the left of #right-half-drawn-pc */
 }
 
 /* LEFT HALF CSS END */
