@@ -103,12 +103,11 @@ body {
 	border-left: 0;
 }
 
-
 .main-container .left-half:hover ~ .right-half #right-half-drawn-pc {
 	opacity: 0;
 }
 
-.main-container .right-half:hover ~ .left-half #left-half-pc {
+.main-container .right-half:hover #left-half-pc {
 	opacity: 0;
 }
 
