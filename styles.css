@@ -83,39 +83,70 @@ body {
 	color: aliceblue 
 }
 
+/* ############################################################################################ */
+/* LEFT HALF CSS START */
+
+/* general properties of right-HALF-drawn-pc */
 .main-container .left-half #left-half-pc {
+	/* flex: auto; */
 	flex-grow: auto;
+	/* transition: 200ms; */
 }
 
+/* HOVER properties of right-HALF-drawn-pc */
+.main-container .left-half:hover #left-half-pc {
+	opacity: 0;
+	/* no transition because it shows the right half in the middle first then dissapears. looks choppy */
+}
+
+/* general properties of right-FULL-drawn-pc */
+.main-container .left-half #left-full-pc {
+	opacity: 0;
+	order: -1;
+}
+
+/* HOVER properties of right-FULL-drawn-pc */
+.main-container .left-half:hover #left-full-pc {
+	/* transition: 600ms; */
+	opacity: 1;
+	order: 1; /* Move #right-full-pc to the left of #right-half-drawn-pc */
+}
+
+/* LEFT HALF CSS END */
+/* ############################################################################################ */
+
+
+/* ############################################################################################ */
+/* RIGHT HALF CSS START */
+
+/* general properties of right-HALF-drawn-pc */
 .main-container .right-half #right-half-drawn-pc {
 	flex: auto; /* puts the pc and (everything else) on the middle edge */
+	/* transition: 200ms; */
 }
 
-
-.main-container .left-half:hover,
-.main-container .left-half:hover ~ .right-half {
-	border-right: 0;
-	border-left: 0;
-}
-
-/* has:() pseudo-class lets me select elements that appear before in the DOM structure */
-/* basically, without has:() I would not be able to easily affect things in the left-half because in the html
-code it was written before the right-half. has:() is an experimental pseudo-class that lets me do this!
-this is an alternative to .main-container .right-hald:hover ~ .left-half #left-half-pc which looks like it should work,
-but does not!*/
-.main-container .right-half:hover,
-.left-half:has(+ .right-half:hover) {
-	border-left: 0;
-	border-right: 0;
-}
-
-.main-container .left-half:hover ~ .right-half #right-half-drawn-pc {
+/* HOVER properties of right-HALF-drawn-pc */
+.main-container .right-half:hover #right-half-drawn-pc {
 	opacity: 0;
+	/* no transition because it shows the right half in the middle first then dissapears. looks choppy */
 }
 
- .left-half:has(+ .right-half:hover) #left-half-pc {
+/* general properties of right-FULL-drawn-pc */
+.main-container .right-half #right-full-drawn-pc {
 	opacity: 0;
-  }
+	flex: auto;
+	order: 1;
+}
+
+/* HOVER properties of right-FULL-drawn-pc */
+.main-container .right-half:hover #right-full-drawn-pc {
+	/* transition: 600ms; */
+	opacity: 1;
+	order: -1; /* Move #right-full-pc to the left of #right-half-drawn-pc */
+}
+
+/* RIGHT HALF CSS END */
+/* ############################################################################################ */
 
 
 /* properties for the main button in the container */
