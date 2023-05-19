@@ -83,40 +83,50 @@ body {
 	color: aliceblue 
 }
 
-.main-container .left-half #left-half-pc {
+.left-half #left-half-pc {
 	flex-grow: auto;
 }
 
-.main-container .right-half #right-half-drawn-pc {
+.right-half #right-half-drawn-pc {
 	flex: auto; /* puts the pc and (everything else) on the middle edge */
 }
 
-
-.main-container .left-half:hover,
-.main-container .left-half:hover ~ .right-half {
+/* when hovering over LEFT half, make middle line invisible */
+.left-half:hover,
+.left-half:hover ~ .right-half {
 	border-right: 0;
 	border-left: 0;
 }
 
+/* when hovering over RIGHT half, make middle line invisible */
 /* has:() pseudo-class lets me select elements that appear before in the DOM structure */
-/* basically, without has:() I would not be able to easily affect things in the left-half because in the html
-code it was written before the right-half. has:() is an experimental pseudo-class that lets me do this!
-this is an alternative to .main-container .right-hald:hover ~ .left-half #left-half-pc which looks like it should work,
-but does not!*/
-.main-container .right-half:hover,
+.right-half:hover,
 .left-half:has(+ .right-half:hover) {
 	border-left: 0;
 	border-right: 0;
 }
 
-.main-container .left-half:hover ~ .right-half #right-half-drawn-pc {
+/* when hovering over LEFT half, make #right-half-drawn-pc invisible */
+.left-half:hover ~ .right-half #right-half-drawn-pc {
 	opacity: 0;
 }
 
- .left-half:has(+ .right-half:hover) #left-half-pc {
+/* when hovering over RIGHT half, make #left-half-pc invisible */
+.left-half:has(+ .right-half:hover) #left-half-pc {
 	opacity: 0;
-  }
+}
 
+/* general properties of #left-half-drawn-pc */
+#left-half-drawn-pc {
+	opacity: 0;
+	order: -1;
+}
+
+/* hover properties of #left-half-drawn-pc */
+.left-half:has(+ .right-half:hover) #left-half-drawn-pc {
+	opacity: 1;
+	order: 0;
+}
 
 /* properties for the main button in the container */
 .main-container .btn {
@@ -129,13 +139,6 @@ but does not!*/
 	box-shadow: 0 4px 16px -4px black;
 	opacity: 0;
 	transition: all 500ms; /* allows you to change property values smoothly, over a given duration */
-}
-
-/* what to do to button when hovering over left-half */
-.main-container .left-half:hover .btn,
-.main-container .right-half:hover .btn {
-	/* when we hover over the left OR right side, do the following: */
-	opacity: 1;
 }
 
 /* logo code */
