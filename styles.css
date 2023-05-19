@@ -128,6 +128,18 @@ body {
 	order: 0;
 }
 
+/* general properties of #right-half-pc */
+#right-half-pc {
+	flex: auto;
+	opacity: -1;
+	order: 0;
+}
+
+.left-half:hover ~ .right-half #right-half-pc {
+	opacity: 1;
+	order: -1;
+}
+
 /* properties for the main button in the container */
 .main-container .btn {
 	background: #FFFFFF;
