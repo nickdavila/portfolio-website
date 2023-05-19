@@ -107,7 +107,7 @@ body {
 	opacity: 0;
 }
 
-.main-container .right-half:hover #left-half-pc {
+.main-container .right-half:hover ~ .left-half #left-half-pc {
 	opacity: 0;
 }
 
