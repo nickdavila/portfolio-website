@@ -91,25 +91,31 @@ body {
 	flex: auto; /* puts the pc and (everything else) on the middle edge */
 }
 
-.main-container .left-half:hover {
-	border-right: 0;
-}
 
-.main-container .right-half:hover {
-	border-left: 0;
-}
-
+.main-container .left-half:hover,
 .main-container .left-half:hover ~ .right-half {
+	border-right: 0;
 	border-left: 0;
+}
+
+/* has:() pseudo-class lets me select elements that appear before in the DOM structure */
+/* basically, without has:() I would not be able to easily affect things in the left-half because in the html
+code it was written before the right-half. has:() is an experimental pseudo-class that lets me do this!
+this is an alternative to .main-container .right-hald:hover ~ .left-half #left-half-pc which looks like it should work,
+but does not!*/
+.main-container .right-half:hover,
+.left-half:has(+ .right-half:hover) {
+	border-left: 0;
+	border-right: 0;
 }
 
 .main-container .left-half:hover ~ .right-half #right-half-drawn-pc {
 	opacity: 0;
 }
 
-.main-container .right-half:hover ~ .left-half #left-half-pc {
+ .left-half:has(+ .right-half:hover) #left-half-pc {
 	opacity: 0;
-}
+  }
 
 
 /* properties for the main button in the container */
