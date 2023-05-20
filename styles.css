@@ -26,7 +26,7 @@ body {
 .main-container {
 	/* 10px padding top and bottom and 10% left and right 
 	This padding makes the nav things not be on the corner, might need to adjust for my 1920x1080 display we will see.*/
-	padding: 5px 5%;
+	/* padding: 5px 5%; */
 	width: 100%;
 	height: 100vh;
 	display: flex;
@@ -45,6 +45,14 @@ body {
 	transition: 500ms all;
 }
 
+/* .right-blur {
+	opacity: 0;
+	backdrop-filter: blur(8px);
+	order: 2;
+	height: 100vh;
+	width: 100%;
+} */
+
 .main-container .left-half {
 	/* main main-container info for both left and right */
     flex: 1; /* will give equal width to both the elements, will use later for animation */
@@ -57,6 +65,16 @@ body {
 	position: relative;
 	transition: all 300ms ease-out;
 }
+
+
+/* .left-blur {
+	opacity: 1;
+	backdrop-filter: blur(8px);
+	order: 2;
+	height: 100vh;
+	width: 100%;
+} */
+
 
 /* code to create line in the middle */
 .main-container .left-half {
@@ -91,6 +109,16 @@ body {
 .left-half:hover ~ .right-half {
 	border-right: 0;
 	border-left: 0;
+}
+
+.left-half:hover ~ .right-half {
+	transition: 300ms ease-out;
+	background: url("images/design-portfolio-bg-05-blurry.png");
+}
+
+.left-half:has(+ .right-half:hover) {
+	background: url(images/stem-portfolio-bg-06-blurry.png);
+	background-position: center;
 }
 
 /* when hovering over RIGHT half, make middle line invisible */
