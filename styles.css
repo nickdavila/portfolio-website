@@ -45,13 +45,7 @@ body {
 	transition: 500ms all;
 }
 
-/* .right-blur {
-	opacity: 0;
-	backdrop-filter: blur(8px);
-	order: 2;
-	height: 100vh;
-	width: 100%;
-} */
+
 
 .main-container .left-half {
 	/* main main-container info for both left and right */
@@ -65,15 +59,6 @@ body {
 	position: relative;
 	transition: all 300ms ease-out;
 }
-
-
-/* .left-blur {
-	opacity: 1;
-	backdrop-filter: blur(8px);
-	order: 2;
-	height: 100vh;
-	width: 100%;
-} */
 
 
 /* code to create line in the middle */
