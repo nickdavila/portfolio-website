@@ -102,7 +102,7 @@ body {
 }
 
 .left-half:has(+ .right-half:hover) {
-	background: url(images/stem-portfolio-bg-06-blurry.png);
+	background: url("images/stem-portfolio-bg-06-blurry.png");
 	background-position: center;
 }
 
@@ -110,8 +110,8 @@ body {
 /* has:() pseudo-class lets me select elements that appear before in the DOM structure */
 .right-half:hover,
 .left-half:has(+ .right-half:hover) {
-	border-left: 0;
-	border-right: 0;
+	border-left: 0px;
+	border-right: 0px;
 }
 
 /* when hovering over LEFT half, make #right-half-drawn-pc invisible */
