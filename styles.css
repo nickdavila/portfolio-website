@@ -52,7 +52,7 @@ body {
     align-items: center;
     justify-content: flex-end; /* not sure why, but in order for PC to be on right end, needed to do flex-end */
 	background: url("images/stem-portfolio-bg-06.png");
-	background-size: cover;
+	/* background-size: cover; */
 	background-position: center;
 	position: relative;
 	transition: all 300ms ease-out;
