@@ -26,7 +26,7 @@ body {
 .main-container {
 	/* 10px padding top and bottom and 10% left and right 
 	This padding makes the nav things not be on the corner, might need to adjust for my 1920x1080 display we will see.*/
-	padding: 10px 10%;
+	padding: 5px 5%;
 	width: 100%;
 	height: 100vh;
 	display: flex;
@@ -42,7 +42,7 @@ body {
 	background-size: cover;
 	background-position: center;
 	position: relative;
-	transition: all 500ms;
+	transition: all 300ms ease-out;
 }
 
 .main-container .left-half {
@@ -51,11 +51,11 @@ body {
 	display: inline-flex;
     align-items: center;
     justify-content: flex-end; /* not sure why, but in order for PC to be on right end, needed to do flex-end */
-	background: url("images/1.jpg");
-	background-size: cover;
+	background: url("images/stem-portfolio-bg-06.png");
+	/* background-size: cover; */
 	background-position: center;
 	position: relative;
-	transition: all 500ms;
+	transition: all 300ms ease-out;
 }
 
 /* code to create line in the middle */
@@ -75,8 +75,9 @@ body {
 
 /* bg  */
 .main-container .right-half {
-	background: url("images/2.jpg")
+	background: url("images/design-portfolio-bg-05.png");
 }
+
 
 /* text color */
 .main-container .right-half {
@@ -110,6 +111,10 @@ body {
 	/* transition: 600ms; */
 	opacity: 1;
 	order: 1; /* Move #right-full-pc to the left of #right-half-drawn-pc */
+}
+
+.main-container .left-half:hover ~ .right-half #right-half-drawn-pc {
+	opacity: 0;
 }
 
 /* LEFT HALF CSS END */
